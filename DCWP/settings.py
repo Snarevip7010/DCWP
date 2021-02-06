@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'mkka29)lzug6=m+#r=qz4824c4&*4eue%vpb$04!b(za%$@l!u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.193.7.82','54.64.114.138','ec2-52-196-29-236.ap-northeast-1.compute.amazonaws.com','52.196.29.236','3.112.12.223','13.231.178.87']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',      #追加
     'widget_tweaks',   #追加
     'drcontrol',           #追加
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +80,13 @@ WSGI_APPLICATION = 'DCWP.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql', # 変更
+        'NAME': 'dcwp', # プロジェクトで使用するデータベース名
+        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
+        'PASSWORD': '201301', # 同上。そのパスワード
+        'HOST': 'localhost',
+        'PORT':'3306',
+        'ATOMIC_REQUESTS':True,
     }
 }
 
@@ -125,3 +132,5 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/login' 
 LOGIN_REDIRECT_URL = '/drcontrol/top'
 LOGOUT_REDIRECT_URL='/login'
+AUTH_USER_MODEL = 'accounts.AuthUser'
+LOGIN_ERROR_URL = '/login' 

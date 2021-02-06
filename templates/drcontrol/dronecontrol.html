@@ -1,10 +1,37 @@
 {% extends './base.html' %}
 {% block content %}
 
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
 
-<select class="form-control">
-  <option>Default select</option>
-</select>
+    <section class="content-header">
+        <h1>コマンド登録</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> ホーム</a></li>
+            <li class="active">コマンド登録</li>
+        </ol>
+    </section>
+    <div class="container">
+    <select id="SelectCommand" class="form-select" style="margin-top:30px;>
+        <div class="col-md-1 col-sm-1">
+            <option value=99>コマンドを選択</option>
+            <option value=1>離陸</option>
+            <option value=2>着陸</option>
+            <option value=3>前進</option>
+            <option value=4>後退</option>
+            <option value=5>右へ</option>
+            <option value=6>左へ</option>
+            <option value=0>待機</option>
+        </div>
+    </select>
+    <select id="SelectOption" class="form-select" style="margin-top:30px;>
+        <div class="col-md-1 col-sm-1">
+        </div>
+    </select>
+    <p id="cm" style="display :none ;" >(cm)</p>
+    <p id="sec" style="display : none;" >(秒)</p>
+    </div>
+</div>
 
 
 {% endblock content %}
