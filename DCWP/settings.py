@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #追加
 ]
 
 ROOT_URLCONF = 'DCWP.urls'
@@ -134,3 +135,5 @@ LOGIN_REDIRECT_URL = '/drcontrol/top'
 LOGOUT_REDIRECT_URL='/login'
 AUTH_USER_MODEL = 'accounts.AuthUser'
 LOGIN_ERROR_URL = '/login' 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
