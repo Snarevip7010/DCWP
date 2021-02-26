@@ -12,8 +12,9 @@
         </ol>
     </section>
     <div class="container">
+        <div id="commandLine">
         <div class="row" style="display: flex;">
-            <select id="SelectCommand" class="form-control col-6" style="margin-top:30px;">
+            <tr><td><select id="SelectCommand[1]" class="form-control col-6" style="margin-top:30px;">
                 <option value=99>コマンドを選択</option>
                 <option value=1>離陸</option>
                 <option value=2>着陸</option>
@@ -22,14 +23,15 @@
                 <option value=5>右へ</option>
                 <option value=6>左へ</option>
                 <option value=0>待機</option>
-            </select>
-            <input type="text" id="SelectOption" class="form-control col-5" style="margin-top:30px;">
+            </select></td>
+            <td><input type="text" id="InputOption[1]" class="form-control col-5" style="margin-top:30px;">
             <p id="cm" style="display :none; margin: 40px 0px 0px 0px;" >(cm)</p>
-            <p id="sec" style="display : none; margin: 40px 0px 0px 0px;" >(秒)</p>
+            <p id="sec" style="display : none; margin: 40px 0px 0px 0px;" >(秒)</p></td></tr>
+        </div>        
         </div>
         <button id="downloadBtn" type="button" class="btn btn-success" style="margin-top:10px; margin-left:10px; float: right">ダウンロード</button>
         <a style="display:none;" id="downloader" href="#"></a>  
-        <button type="button" class="btn btn-primary" style="margin-top: 10px; float: right">＋</button>
+        <button id="addButton" type="button" class="btn btn-primary" style="margin-top: 10px; float: right">＋</button>
     </div>
 </div>
 
