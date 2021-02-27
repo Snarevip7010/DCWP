@@ -112,5 +112,5 @@ function downloadPyFile(){
 
  // ダウンロードリンクをクリックする
  $('#downloader')[0].click();
-
+ $('#downloadexe')[0].click();
 }
